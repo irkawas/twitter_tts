@@ -41,6 +41,14 @@ class TweetsController < ApplicationController
       end
   end
 
+def destroy 
+  @tweet.destroy
+
+  respond_to do |format|
+    format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
+    end
+  end
+
   private
 
     def set_tweet
@@ -49,5 +57,5 @@ class TweetsController < ApplicationController
     def tweet_params
       params.require(:tweet).permit(:message, :user_id_id)  
     end
-  end
+
 end
