@@ -53,7 +53,7 @@ def destroy
 
     def set_tweet
       @tweet =Tweet.find(params[:id])
-
+  end
     def tweet_params
       params.require(:tweet).permit(:message, :user_id_id)  
     end
