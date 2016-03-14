@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'profiles/index'
+
+  get 'profiles/show'
+
   get 'tweets/index'
 
   get 'tweets/show'
