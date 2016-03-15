@@ -4,4 +4,8 @@
   <%= tweet.message %><br>
 <% end %>
 
-<%= link_to "Follow", relationships_path(:friend_id => @user), method: :post %>
+<% if current_user.friends.include?(@user) %>
+  <%= link_to "Unfollow", relationships_path(current_user.relationships.find_by_friend_id(@user), method: :delete ) %>
+<% else %>
+  <%= link_to "Follow", relationships_path(:friend_id => @user), method: :post %>
+<% end %>
