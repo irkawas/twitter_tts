@@ -1,5 +1,6 @@
 <h1>User Directory</h1>
 
 <% @users.each do |user| %>
-  <%= tweets.message %><br>
+  <%= link_to user.username, profile_path(user) %><br>
 <% end %>
+
